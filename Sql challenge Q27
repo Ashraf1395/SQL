@@ -1,0 +1,20 @@
+Q27.
+Table: Users
+Column Name Type
+user_id Int
+Name Varchar
+Mail Varchar
+user_id is the primary key for this table.
+This table contains information of the users signed up in a website. Some emails are invalid.
+Write an SQL query to find the users who have valid emails.A
+valid e-mail has a prefix name and a domain where:
+● The prefix name is a string that may contain letters (upper or lower case), digits, underscore
+'_', period '.', and/or dash '-'. The prefix name must start with a letter.
+● The domain is '@leetcode.com'.
+Return the result table in any order.
+
+
+select user_id, name, mail from Users
+where
+mail regexp '^[a-zA-Z]+[a-zA-Z0-9_\.\-]*@leetcode[\.]com'
+order by user_id;
